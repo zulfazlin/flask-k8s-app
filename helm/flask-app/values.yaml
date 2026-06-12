@@ -1,9 +1,9 @@
 app:
   replicaCount: 2
   image:
-    repository: flask-k8s-app
+    repository: zulfazlin/flask-k8s-app
     tag: 77edd2cb
-    pullPolicy: Never
+    pullPolicy: IfNotPresent
   port: 5000
 
 postgres:
