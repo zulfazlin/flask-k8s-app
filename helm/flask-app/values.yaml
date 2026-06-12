@@ -2,7 +2,7 @@ app:
   replicaCount: 2
   image:
     repository: flask-k8s-app
-    tag: v1
+    tag: 77edd2cb
     pullPolicy: Never
   port: 5000
 
