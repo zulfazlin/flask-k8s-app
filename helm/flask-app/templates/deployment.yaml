@@ -12,6 +12,10 @@ spec:
       labels:
         app: {{ .Release.Name }}-app
     spec:
+      initContainers:
+      - name: wait-for-postgres
+        image: busybox
+        command: ["/bin/sh", "-c", "until nc -z flask-app-postgres 5432; do echo waiting for postgres; sleep 2; done"]
       containers:
       - name: flask
         image: "{{ .Values.app.image.repository }}:{{ .Values.app.image.tag }}"
