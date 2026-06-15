@@ -39,6 +39,13 @@ spec:
             port: {{ .Values.app.port }}
           initialDelaySeconds: 5
           periodSeconds: 5
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "100m"
+          limits:
+            memory: "256Mi"
+            cpu: "200m"
 ---
 apiVersion: v1
 kind: Service
