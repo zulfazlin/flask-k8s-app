@@ -1,5 +1,5 @@
 app:
-  replicaCount: 1
+  replicaCount: 4
   image:
     repository: zulfazlin/flask-k8s-app
     tag: c98d828a
