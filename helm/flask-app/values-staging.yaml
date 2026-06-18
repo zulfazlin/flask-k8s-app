@@ -1,0 +1,19 @@
+app:
+  replicaCount: 2
+  image:
+    repository: zulfazlin/flask-k8s-app
+    tag: 9d2bf312
+    pullPolicy: IfNotPresent
+  port: 5000
+
+postgres:
+  image: postgres:15
+  database: mydb_staging
+  user: myuser
+  password: stagingpassword
+  storage: 1Gi
+
+service:
+  type: NodePort
+  port: 5000
+  nodePort: 30502

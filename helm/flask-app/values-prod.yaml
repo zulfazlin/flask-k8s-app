@@ -1,0 +1,19 @@
+app:
+  replicaCount: 4
+  image:
+    repository: zulfazlin/flask-k8s-app
+    tag: 9d2bf312
+    pullPolicy: IfNotPresent
+  port: 5000
+
+postgres:
+  image: postgres:15
+  database: mydb_prod
+  user: myuser
+  password: prodpassword
+  storage: 2Gi
+
+service:
+  type: NodePort
+  port: 5000
+  nodePort: 30503
